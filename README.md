@@ -1,6 +1,13 @@
 # contact
 
-A new Flutter project.
+## info
+flutter를 활용하여 만든 연락처 앱
+
+## OS
+window
+
+## IDE
+android studio
 
 ## Getting Started
 

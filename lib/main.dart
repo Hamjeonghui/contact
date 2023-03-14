@@ -11,17 +11,12 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       home: Scaffold(
-
-        appBar: AppBar(title: Text('앱임')),
-
-        body: SizedBox(
-          //버튼 위젯은 TextButton외에도 IconButton(필수요소 구성이 약간 다르다), ElevatedButton이 있다.
-          child: TextButton(
-              child: Text('텍스트 버튼에 들어갈 글자') ,
-              onPressed: (){}, //위의 child와 함께 필수 요소
-              style: ButtonStyle( ), //부여할 스타일
-          ),
+        appBar: AppBar(
+            actions: [Icon(Icons.star),Icon(Icons.star)], //앱바 우측
+            leading: Icon(Icons.menu), //앱바 좌측
+            title: Text('앱이름')
         ),
+        body: SizedBox( ),
       )
     );
   }

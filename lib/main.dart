@@ -9,12 +9,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    // Material이라는 위젯을 활용함으로써 Google에서 제공하는 Custom||Material Thema를 사용할 수 있게 된다.
     return MaterialApp(
-      home: Scaffold( //상 중 하로 나누어주는 위젯
-        appBar: AppBar(), // 상단 위젯
-        body: Container(), //중앙 위젯
-        bottomNavigationBar: BottomAppBar( child:Text('가나다라') ) //하단 위젯
+      home: Scaffold(
+        body: Row( //한 라인에 다수의 위젯을 배치할 수 있는 위젯/세로는 Column
+          mainAxisAlignment: MainAxisAlignment.center, //요소 메인방향(Row는 가로, Column은 세로) 가운데정렬. 다양한 객체로 정렬 변경가능
+          crossAxisAlignment: CrossAxisAlignment.center, //요소 반방향 가운데 정렬, 이 같은 경우는 세로 여백이 지정되어있어야함
+          children: const [//child가 아닌 children
+            Icon(Icons.star),
+            Icon(Icons.star),
+            Icon(Icons.star)
+          ]
+        ),
       )
     );
   }

@@ -14,13 +14,18 @@ class MyApp extends StatelessWidget {
 
         appBar: AppBar(title: Text('앱임')),
 
-        body: Align(//Center등 외에 조금 더 구체적 정렬을 위한 위젯
-          alignment: Alignment.centerRight, //Alignment객체의 정렬과 관련된 클래스를 통해 다양한 정렬이 가능해짐
-          child: Container( //우클릭+전구||alt+enter로 해당 컨테이너 정렬 바로 변경 가능
-            height: double.infinity,//부모(현시점에는 Scaffold)를 초과하지 않는 선에서 무한
-            width: 50, color: Colors.blue,
-          ),
-        ),
+        body: Column(
+          children: [
+            SizedBox(// container랑 차이: https://memostack.tistory.com/188
+              child: Text('안녕하소',
+                // style 하위 객체들을 통해서 text와 관련된 다양한 스타일을 부여할 수 있다.
+                //style: TextStyle( color: Color(0xfff52929) ),//text에 스타일 주는 법&헥터코드로 색상 주는 법(길본값0xff)
+                style: TextStyle( color: Color.fromRGBO(24, 0, 255, 0.2) ),//RGB&불투명도까지 주는 법
+              ),
+            ),
+            Icon(Icons.ac_unit, )//Icon의 경우 Style객체가 없어서, 간단한 설정만이 가능하다.
+          ],
+        )
       )
     );
   }

@@ -11,15 +11,30 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-          appBar: AppBar(),
-          body:Row(
-            children: [
-              // flex: 1인 Flexible박스라고 생각하자.
-              Expanded(child: Container( color: Colors.red )),
-              // 아래 100 Width만큼의 컨테이너 폭을 제외한 전체영역을 위 요소가 차지하는 것을 알 수 있다.
-              Container( width: 100, color: Colors.amber )
-            ],
-          ),
+            appBar: AppBar(  ),
+            body: Column(
+              children: [
+                CustomWidget(),//커스템위젯 사용
+                CustomTest//변수 사용
+              ],
+            )
         ));
+  }
+}
+
+// 변수
+var CustomTest = SizedBox(
+    child: Text('엄청 긴 내용물을 변수화하여 축약')
+);
+
+// 커스텀 위젯
+class CustomWidget extends StatelessWidget {
+  const CustomWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        child: Text('엄청 긴 내용물을 stless를 사용하여 축약')
+    );
   }
 }

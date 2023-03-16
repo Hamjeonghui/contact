@@ -14,9 +14,10 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(),
           body:Row(
             children: [
-              // Flexible에는 flex요소가 있으며, 값은 배수로 삽입할 수 있다.
-              Flexible(child: Container( color: Colors.red ), flex: 3),
-              Flexible(child: Container( color: Colors.amber ), flex: 7,),
+              // flex: 1인 Flexible박스라고 생각하자.
+              Expanded(child: Container( color: Colors.red )),
+              // 아래 100 Width만큼의 컨테이너 폭을 제외한 전체영역을 위 요소가 차지하는 것을 알 수 있다.
+              Container( width: 100, color: Colors.amber )
             ],
           ),
         ));
